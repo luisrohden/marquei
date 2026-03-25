@@ -1,0 +1,90 @@
+.container{
+    width: 1600px;
+    max-width: calc(100% - 40px);
+    margin:10px auto;
+    padding:0 15px;
+}
+#mainHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex{
+    display: flex;
+}
+.btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding:8px;
+    border:1px solid #CCC;
+    border-radius: 8px;
+    filter:saturate(0.5);
+    transition: ease all 0.4s;
+    cursor: pointer;
+    &:hover{
+        filter:saturate(1);
+    }
+    &.btn-add{
+        background-color: #40c;
+        color:#FFF;
+    }
+    &.btn-save{
+        background-color: #260;
+        color:#FFF;
+    }
+    &.btn-close{
+        background-color: #500;
+        color:#FFF;
+        position: relative;
+        width: 32px;
+        height: 32px;
+        margin-left: auto;
+        span{
+            width:26px;
+            height: 2px;
+            background-color: #FFF;
+            display: block;
+            position: absolute;
+            top:calc (50% + 1px);
+            left:calc(50% - 13px);
+            transform: rotate(45deg);
+            &:nth-child(1){
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+aside#overSide{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position:absolute;
+    left:0;
+    top: 0;
+    display: none;
+    padding:30px;
+    .content{
+        background-color:#FFF;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width:100%;
+        height: auto;
+        padding: 15px;
+        border-radius: 15px;
+        position: relative;
+    }
+    &.show{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.formLine{
+    margin:20px;
+    input{
+        padding:6px 12px;
+        border-radius: 8px;
+        border:1px dotted #555;
+    }
+}

@@ -1,0 +1,49 @@
+/* Reset Padrão Profissional */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: sans-serif; /* Base para não ficar com fonte serrilhada */
+    position: relative;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* Remove estilos de lista (comum em menus/logs) */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove o contorno azul de foco (opcional, mas comum em apps) */
+button:focus {
+    outline: none;
+}
+
+/* Garante que links não fiquem com sublinhado padrão */
+a {
+    text-decoration: none;
+    color: inherit;
+}
