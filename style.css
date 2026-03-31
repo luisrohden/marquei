@@ -1,16 +1,38 @@
+:root{
+    --interval:#6600cc;
+    --register:#CC0066;
+}
 .container{
     width: 1600px;
-    max-width: calc(100% - 40px);
-    margin:10px auto;
-    padding:0 15px;
+    max-width: 100%;
+    padding:64px 12px 12px 12px;
 }
+h1{
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding:2px 2px;
+    color:#FFF;
+    background-color: #240;
+    width:100%;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    
+}
+
 #mainHeader{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    width:100%;
+    top: 0;
+    left: 0;
 }
 .flex{
     display: flex;
+}
+.iCenter{
+    align-items: center;
 }
 .btn{
     display: inline-flex;
@@ -19,19 +41,34 @@
     padding:8px;
     border:1px solid #CCC;
     border-radius: 8px;
-    filter:saturate(0.5);
     transition: ease all 0.4s;
     cursor: pointer;
-    &:hover{
-        filter:saturate(1);
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Posiciona o ícone à esquerda e centralizado verticalmente */
+    background-size: 20px 20px; /* Define o tamanho do ícone */
+    padding: 20px; /* Abre espaço na esquerda para o ícone não cobrir o texto */
+    margin-right: 16px;
+    &.btn-show{
+        background-color:#600;
+        color:#FFF;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>');
     }
     &.btn-add{
         background-color: #40c;
         color:#FFF;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>');
     }
     &.btn-save{
-        background-color: #260;
+        background-color: #185;
+        
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/></svg>');;
         color:#FFF;
+    }
+    &.bnt-register{
+        background-color:darkorange;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>');
+        
+
     }
     &.btn-close{
         background-color: #500;
@@ -81,10 +118,90 @@ aside#overSide{
     }
 }
 .formLine{
-    margin:20px;
-    input{
+    margin:12px 0px;
+    input,select,label{
         padding:6px 12px;
         border-radius: 8px;
-        border:1px dotted #555;
+        border:3px double #444;
+        display: block;
+        width:100%;
+        padding:6px;
+        background-color: rgba(255,210,210,0.5);
     }
+    label{
+        margin-bottom: 2px;
+        border:0px;
+        background-color: transparent;
+    }
+}
+#list{
+    padding-top: 10px;
+}
+.item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding:4px;
+    border-radius: 4px;
+    .item__name{
+        padding:10px;
+    }
+    &.item-register{
+        border:2px solid var(--register);
+    }
+    &.item-interval{
+        border:2px solid var(--interval);
+    }
+    .btn-show{
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+#tag{
+    display: flex;
+    margin:12px 0;
+    .tag{
+        display: block;
+        padding:8px;
+        background-color: #240;
+        color: #fff;
+        border-radius: 8px;
+        margin-right: 8px;
+        &.register{
+            background-color: var(--register);
+        }
+        &.interval{
+            background-color: var(--interval);
+        }
+        &.selected{
+            filter: brightness(2);
+        }
+    }
+}
+.progress-pizza {
+    /* Configurações personalizáveis */
+    --size: 150px;
+    --color: #4caf50; /* Cor da fatia preenchida */
+    --bg-color: #ddd;  /* Cor do fundo (restante) */
+    /* --value será definido no HTML ou JS */
+
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%; /* Mantém o formato circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    
+    /* Sombra suave para profundidade (opcional) */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+    /* A mágica acontece aqui (igual antes) */
+    background: conic-gradient(
+        var(--color) calc(var(--value) * 1%), 
+        var(--bg-color) 0
+    );
 }
