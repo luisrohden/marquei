@@ -48,6 +48,12 @@ h1{
     background-size: 20px 20px; /* Define o tamanho do ícone */
     padding: 20px; /* Abre espaço na esquerda para o ícone não cobrir o texto */
     margin-right: 16px;
+    i{
+        margin-left: 18px;
+        text-transform: uppercase;
+        font-size: 13.5px;
+
+    }
     &.btn-show{
         background-color:#600;
         color:#FFF;
@@ -180,8 +186,8 @@ aside#overSide{
 }
 .progress-pizza {
     /* Configurações personalizáveis */
-    --size: 150px;
-    --color: #4caf50; /* Cor da fatia preenchida */
+    --size: 32px;
+    --color: #800; /* Cor da fatia preenchida */
     --bg-color: #ddd;  /* Cor do fundo (restante) */
     /* --value será definido no HTML ou JS */
 
@@ -201,7 +207,7 @@ aside#overSide{
 
     /* A mágica acontece aqui (igual antes) */
     background: conic-gradient(
-        var(--color) calc(var(--value) * 1%), 
+        var(--color) calc(50 * 1%), 
         var(--bg-color) 0
     );
 }

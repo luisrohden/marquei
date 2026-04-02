@@ -17,7 +17,9 @@ export const EventsForm = {
             `
             <div id="extraFields"></div>
             <div class="formLine">
-                <button class="btn btn-save event-save"></button>
+                <button class="btn btn-save event-save">
+                    <i>Salvar</i>
+                </button>
             </div>
             `;
         return form;
